@@ -1,0 +1,27 @@
+import Link from "next/link"
+import { AlertTriangle } from "lucide-react"
+import { Button } from "@/components/ui/button"
+
+export default function AccessDeniedPage() {
+  return (
+    <div className="flex min-h-screen flex-col items-center justify-center p-4 bg-background">
+      <div className="w-full max-w-md text-center">
+        <div className="mb-4 flex justify-center">
+          <div className="h-20 w-20 rounded-full bg-destructive/10 flex items-center justify-center">
+            <AlertTriangle className="h-10 w-10 text-destructive" />
+          </div>
+        </div>
+        <h1 className="text-3xl font-bold mb-2">Access Denied</h1>
+        <p className="text-muted-foreground mb-6">You do not have permission to access this file or resource.</p>
+        <div className="flex flex-col gap-2">
+          <Button asChild>
+            <Link href="/dashboard">Return to Dashboard</Link>
+          </Button>
+          <Button variant="outline" asChild>
+            <Link href="/">Sign Out</Link>
+          </Button>
+        </div>
+      </div>
+    </div>
+  )
+}

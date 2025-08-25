@@ -1,0 +1,367 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 196 100% 47%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 196 100% 47%;
+    --radius: 1rem;
+    --warning: 38 92% 50%;
+    --warning-foreground: 48 96% 89%;
+
+    /* File type colors */
+    --file-pdf: 0 84% 60%;
+    --file-doc: 217 91% 60%;
+    --file-image: 196 100% 47%;
+    --file-zip: 38 92% 50%;
+    --file-default: 215 16% 47%;
+
+    /* Category colors */
+    --category-documents: 217 91% 60%;
+    --category-images: 196 100% 47%;
+    --category-videos: 130 50% 60%;
+    --category-audio: 0 84% 60%;
+    --category-other: 271 91% 65%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 196 100% 47%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 196 100% 47%;
+    --warning: 48 96% 89%;
+    --warning-foreground: 38 92% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .file-card {
+    @apply relative overflow-hidden rounded-xl border bg-card p-4 shadow-sm transition-all hover:shadow-md;
+  }
+
+  .file-card-pdf {
+    @apply bg-gradient-to-br from-red-50 to-white dark:from-red-950/20 dark:to-card;
+  }
+
+  .file-card-doc {
+    @apply bg-gradient-to-br from-blue-50 to-white dark:from-blue-950/20 dark:to-card;
+  }
+
+  .file-card-image {
+    @apply bg-gradient-to-br from-cyan-50 to-white dark:from-cyan-950/20 dark:to-card;
+  }
+
+  .file-card-zip {
+    @apply bg-gradient-to-br from-amber-50 to-white dark:from-amber-950/20 dark:to-card;
+  }
+
+  .file-card-default {
+    @apply bg-gradient-to-br from-slate-50 to-white dark:from-slate-800/50 dark:to-card;
+  }
+
+  .category-card {
+    @apply relative overflow-hidden rounded-xl border bg-card p-4 shadow-sm transition-all hover:shadow-md;
+  }
+
+  .category-card-documents {
+    @apply bg-gradient-to-br from-blue-50 to-white dark:from-blue-950/20 dark:to-card;
+  }
+
+  .category-card-images {
+    @apply bg-gradient-to-br from-cyan-50 to-white dark:from-cyan-950/20 dark:to-card;
+  }
+
+  .category-card-videos {
+    @apply bg-gradient-to-br from-green-50 to-white dark:from-green-950/20 dark:to-card;
+  }
+
+  .category-card-audio {
+    @apply bg-gradient-to-br from-red-50 to-white dark:from-red-950/20 dark:to-card;
+  }
+
+  .category-card-other {
+    @apply bg-gradient-to-br from-purple-50 to-white dark:from-purple-950/20 dark:to-card;
+  }
+
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-sm dark:bg-black/30;
+  }
+
+  .glass-effect {
+    @apply bg-white/50 backdrop-blur-md dark:bg-black/20;
+  }
+
+  .sidebar-item {
+    @apply flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground;
+  }
+
+  .sidebar-item-active {
+    @apply bg-primary/10 text-primary hover:bg-primary/20;
+  }
+
+  /* Enhanced 3D card styling */
+  .card-3d {
+    @apply relative overflow-hidden rounded-xl border bg-card transition-all;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    backdrop-filter: blur(5px);
+  }
+
+  .card-3d-hover {
+    @apply transform transition-all duration-300;
+    transform: translateY(0) scale(1) rotateX(0) rotateY(0);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  }
+
+  .card-3d-hover:hover {
+    transform: translateY(-10px) scale(1.02) rotateX(2deg) rotateY(2deg);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Glass morphism for more modern UI */
+  .glass-morphism {
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+  }
+
+  .dark .glass-morphism {
+    background: rgba(17, 25, 40, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  /* Neumorphism for input elements */
+  .neumorphic {
+    @apply bg-gray-100 dark:bg-gray-800;
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.1),
+                -6px -6px 12px rgba(255, 255, 255, 0.8);
+  }
+  
+  .dark .neumorphic {
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.3),
+                -6px -6px 12px rgba(255, 255, 255, 0.04);
+  }
+
+  /* Enhanced gradient cards */
+  .gradient-border {
+    position: relative;
+    padding: 1px;
+    border-radius: inherit;
+    content: "";
+    background: linear-gradient(
+      45deg,
+      rgba(var(--primary), 0.5),
+      rgba(var(--primary), 0.2),
+      rgba(var(--primary), 0.1),
+      transparent
+    );
+  }
+
+  /* Realistic drop shadow */
+  .realistic-shadow {
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.15), 
+                0 5px 10px -5px rgba(0, 0, 0, 0.1);
+  }
+
+  /* 3D depth effect for buttons and interactive elements */
+  .depth-effect {
+    transition: all 0.3s ease;
+    transform: translateY(0);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 
+                0 1px 2px rgba(0, 0, 0, 0.24);
+  }
+
+  .depth-effect:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 
+                0 6px 6px rgba(0, 0, 0, 0.23);
+  }
+  
+  .depth-effect:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 
+                0 1px 2px rgba(0, 0, 0, 0.24);
+  }
+}
+
+/* Reduced/optimized animations for better performance */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Only apply float animation when prefers-reduced-motion is not set */
+@media (prefers-reduced-motion: no-preference) {
+  .float-animation {
+    animation: float 6s ease-in-out infinite;
+    /* Use will-change for GPU acceleration but only on higher-end devices */
+    will-change: transform;
+  }
+}
+
+/* Disable float animation for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .float-animation {
+    animation: none;
+  }
+}
+
+/* Login page animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 1s ease forwards;
+}
+
+.animate-slideUp {
+  animation: slideUp 0.8s ease forwards;
+}
+
+.animation-delay-300 {
+  animation-delay: 0.3s;
+}
+
+.animation-delay-500 {
+  animation-delay: 0.5s;
+}
+
+.animation-delay-700 {
+  animation-delay: 0.7s;
+}
+
+.animation-delay-900 {
+  animation-delay: 0.9s;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Cosmic animations */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes reverse-spin {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+@keyframes twinkle {
+  0% { opacity: 0.2; }
+  50% { opacity: 1; }
+  100% { opacity: 0.2; }
+}
+
+.animate-slow-spin {
+  animation: spin 30s linear infinite;
+}
+
+.animate-reverse-spin {
+  animation: reverse-spin 20s linear infinite;
+}
+
+.animate-twinkle {
+  animation: twinkle 4s ease-in-out infinite;
+}
+
+/* Login page blob animations */
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+/* Responsive design improvements */
+@media (max-width: 768px) {
+  .card-3d-hover:hover {
+    transform: translateY(-5px) scale(1.01);
+  }
+}
+
+@media (min-width: 1024px) {
+  .card-3d-hover:hover {
+    transform: translateY(-15px) scale(1.03) rotateX(3deg) rotateY(3deg);
+  }
+}
