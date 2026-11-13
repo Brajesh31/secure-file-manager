@@ -2,8 +2,6 @@
 
 A Next.js 15 and React 18 interface prototype for a file-management dashboard. It includes login and dashboard screens, file and folder views, user-management dialogs, activity panels, and a component library built with Tailwind CSS and Radix UI.
 
-<badge>Prototype only</badge>
-
 **Security warning:** The checked-in dashboard currently uses mock data and browser-side state. The login page contains a placeholder authentication check, and the project does not include a verified backend, durable file storage, server-side authorization, or production-grade encryption. The interface must not be used to store real confidential documents until those services are implemented and independently reviewed.
 
 ## Features in the current UI
