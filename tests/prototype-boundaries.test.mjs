@@ -93,9 +93,10 @@ test("package scripts include explicit type and repository checks", () => {
 
 test("environment files remain ignored except the example template", () => {
   const gitignore = read(".gitignore");
-  assert.match(gitignore, /^\\.env$/m);
-  assert.match(gitignore, /^\\.env\\.\\*$/m);
-  assert.match(gitignore, /^!\\.env\\.example$/m);
+  const lines = gitignore.split(String.fromCharCode(10));
+  assert.ok(lines.includes(".env"));
+  assert.ok(lines.includes(".env.*"));
+  assert.ok(lines.includes("!.env.example"));
 });
 
 test("deep technical documentation covers the production trust boundaries", () => {
