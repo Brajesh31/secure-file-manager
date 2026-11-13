@@ -57,12 +57,12 @@ export default function Home() {
           <h1 className="text-4xl font-bold animate-slideUp animation-delay-300">Files_Management</h1>
         </div>
         <h2 className="text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 leading-tight animate-slideUp animation-delay-500">
-          Files Management <br />
-          <span className="bg-gradient-to-r from-cyan-400 to-purple-500 text-transparent bg-clip-text">Management</span> <br />
-          System
+          File Management <br />
+          <span className="bg-gradient-to-r from-cyan-400 to-purple-500 text-transparent bg-clip-text">Dashboard</span> <br />
+          Prototype
         </h2>
         <p className="text-xl text-white/70 max-w-md leading-relaxed animate-slideUp animation-delay-700">
-          Access your secure documents from anywhere with advanced encryption and user permission management.
+          Explore a file-management dashboard prototype with sample files, folders and role-themed screens. No real files are uploaded, stored, or encrypted.
         </p>
       </div>
       

@@ -69,7 +69,7 @@ export function LoginForm() {
             </div>
           </div>
           <CardTitle className="text-3xl font-bold text-center text-transparent bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text animate-slideUp animation-delay-300">SecureFiles</CardTitle>
-          <CardDescription className="text-center text-lg text-white/80 animate-slideUp animation-delay-500">Sign in to access your secure files</CardDescription>
+          <CardDescription className="text-center text-lg text-white/80 animate-slideUp animation-delay-500">Demo access only. Email and password are not verified. Role selection is not access control. Do not enter real credentials.</CardDescription>
         </CardHeader>
         <form onSubmit={handleSubmit}>
           <CardContent className="space-y-4 relative z-10">
@@ -93,7 +93,7 @@ export function LoginForm() {
               />
             </div>
             <div className="space-y-2 animate-fadeIn animation-delay-700">
-              <Label className="text-white">Role</Label>
+              <Label className="text-white">Demo Role</Label>
               <RadioGroup defaultValue="user" className="flex gap-4" onValueChange={setRole} value={role}>
                 <div className="bg-white/10 hover:bg-white/15 px-4 py-2 rounded-xl flex items-center space-x-2 cursor-pointer transition-colors">
                   <RadioGroupItem value="user" id="user" className="text-cyan-500" />

@@ -8,9 +8,9 @@ import { Toaster } from "@/components/ui/toaster"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "File Management System",
-  description: "A secure file management system with role-based access control",
-    generator: 'v0.dev'
+  title: "Secure File Manager UI Prototype",
+  description: "A dashboard UI prototype backed by local mock data. No real authentication, file storage or server-side authorization is implemented.",
+
 }
 
 export default function RootLayout({

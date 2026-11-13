@@ -84,13 +84,13 @@ export default function UploadPage() {
 
   return (
     <div className="container mx-auto p-6">
-      <h1 className="text-2xl font-bold mb-6">Upload File</h1>
+      <h1 className="text-2xl font-bold mb-6">Simulate Upload</h1>
 
       <Card className="card-3d max-w-2xl mx-auto">
         <form onSubmit={handleSubmit}>
           <CardHeader>
             <CardTitle>File Upload</CardTitle>
-            <CardDescription>Upload a new file and set access permissions</CardDescription>
+            <CardDescription>Demo only: selected files stay in browser memory. This screen does not upload or store file content.</CardDescription>
           </CardHeader>
           <CardContent className="space-y-6">
             <div className="space-y-2">
@@ -225,7 +225,7 @@ export default function UploadPage() {
               {isUploading ? (
                 <>
                   <div className="mr-2 h-4 w-4 animate-spin rounded-full border-2 border-background border-t-transparent"></div>
-                  Uploading...
+                  Simulating...
                 </>
               ) : (
                 <>

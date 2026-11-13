@@ -1,21 +1,29 @@
 name: Feature request
-description: Suggest a feature or improvement.
+description: Suggest a UI, data, backend or security improvement.
 title: "[Feature]: "
 labels: ["enhancement"]
 body:
   - type: textarea
-    id: usecase
+    id: problem
     attributes:
-      label: User problem or use case
+      label: User problem and context
     validations:
       required: true
   - type: textarea
-    id: proposal
+    id: proposed
     attributes:
-      label: Proposed behavior
+      label: Proposed change
+    validations:
+      required: true
+  - type: textarea
+    id: architecture
+    attributes:
+      label: Routes, data and API impact
+      description: Clarify whether the request is UI-only or requires a trusted backend capability.
     validations:
       required: true
   - type: textarea
     id: security
     attributes:
-      label: Security, privacy, or permission implications
+      label: Security and privacy impact
+      description: Include identity, authorization, file handling, storage, logging and retention.
