@@ -181,3 +181,5 @@ Read [Threat Model](docs/THREAT-MODEL.md), [Authentication and Authorization](do
 Read [CONTRIBUTING.md](CONTRIBUTING.md) before opening a pull request. Never commit real documents, passwords, API keys, user exports or customer information. Security concerns should be reported privately using [SECURITY.md](SECURITY.md).
 
 The project is distributed under the existing MIT licence in [LICENSE](LICENSE).
+
+Last updated: 2026-11-14 04:20 UTC
